@@ -39,10 +39,15 @@ function Index() {
           setUser(data.correo); // Actualiza el contexto del usuario
           router.push("/achievements"); // Redirige a la página de logros
         }
+        else {
+          setLoading(false);
+          alert("Correo o contraseña incorrectos");
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
         setLoading(false);
+        alert(error);
         // Manejar el error, por ejemplo, mostrar un mensaje al usuario
       });
   };

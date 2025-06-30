@@ -12,7 +12,7 @@ function Achievements() {
   const [loading, setLoading] = useState(false);
   const [logros, setLogros] = useState([]);
   const router = useRouter();
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: {
       nombre: "",
       descripcion: "",
@@ -55,6 +55,7 @@ function Achievements() {
         .then((response) => response.json())
         .then(() => {
             setLoading(false);
+            reset();
             close();
             router.push("/achievements"); // Redirect to achievements page after adding
         })  

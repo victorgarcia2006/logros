@@ -15,6 +15,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const nuevoUsuario = await Usuario.create(req.body);
     if(nuevoUsuario){
       return res.status(201).json({mensaje: 'ok'});
+    } else {
+      return res.status(400).json({ error: 'Error al crear el usuario' });
     }
   }
 

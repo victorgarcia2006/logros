@@ -45,6 +45,7 @@ function Register() {
       .catch((error) => {
         console.error("Error:", error);
         setLoading(false);
+        alert(error);
         // Manejar el error, por ejemplo, mostrar un mensaje al usuario
       });
   };
