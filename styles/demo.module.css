@@ -1,0 +1,8 @@
+.input {
+  transition: none;
+
+  &:focus-within {
+    outline: 1px solid var(--mantine-color-orange-6);
+    border-color: transparent;
+  }
+}
