@@ -53,7 +53,7 @@ function Achievements() {
         }),
         })
         .then((response) => response.json())
-        .then((res) => {
+        .then(() => {
             setLoading(false);
             close();
             router.push("/achievements"); // Redirect to achievements page after adding

@@ -8,10 +8,12 @@ if (!MONGODB_URI) {
 }
 
 // Previene múltiples conexiones en desarrollo (Next.js reinicia mucho)
-let cached = (global as any).mongoose;
+type MongooseCache = { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
+
+let cached: MongooseCache = (global as { mongoose?: MongooseCache }).mongoose as MongooseCache;
 
 if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
+  cached = (global as { mongoose?: MongooseCache }).mongoose = { conn: null, promise: null };
 }
 
 export async function connectDB() {
