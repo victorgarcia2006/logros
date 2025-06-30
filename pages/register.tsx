@@ -4,9 +4,11 @@ import classes from "@/styles/demo.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { useUserContext } from "@/context/UserContext";
 
 function Register() {
   const router = useRouter();
+  const { setUser } = useUserContext();
   const [loading, setLoading] = useState(false);
   const { control, handleSubmit } = useForm({
     defaultValues: {
@@ -32,10 +34,11 @@ function Register() {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then((res) => {
         // Redirigir o mostrar un mensaje de éxito
-        if (data.mensaje == "ok") {
+        if (res.mensaje == "ok") {
           setLoading(false);
+          setUser(data.correo);
           router.push("/achievements"); // Redirige a la página de logros
         }
       })

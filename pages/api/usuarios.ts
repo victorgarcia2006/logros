@@ -13,7 +13,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === 'POST') {
     const nuevoUsuario = await Usuario.create(req.body);
-    return res.status(201).json(nuevoUsuario);
+    if(nuevoUsuario){
+      return res.status(201).json({mensaje: 'ok'});
+    }
   }
 
   res.setHeader('Allow', ['GET', 'POST']);
