@@ -5,7 +5,6 @@ import { useDisclosure } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import classes from "@/styles/demo.module.css";
-import { set } from "mongoose";
 
 function Achievements() {
   const { user } = useUserContext();
@@ -25,7 +24,7 @@ function Achievements() {
         try {
             const response = await fetch(`/api/logros?usuario=${user}`);
             const data = await response.json();
-            console.log("Logros del usuario:", data);4
+            console.log("Logros del usuario:", data);
             setLogros(data);
         } catch (error) {
             console.error("Error fetching achievements:", error);
