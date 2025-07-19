@@ -2,7 +2,7 @@
   transition: none;
 
   &:focus-within {
-    outline: 1px solid var(--mantine-color-orange-6);
+    outline: 1px solid var(--mantine-color-guinda-8);
     border-color: transparent;
   }
 }

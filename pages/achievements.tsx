@@ -69,7 +69,7 @@ function Achievements() {
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-gray-100 p-4">
-      <h1 className="text-[#FF6F04] text-2xl font-bold text-center">
+      <h1 className="text-[#840846] text-2xl font-bold text-center">
         Mis logros
       </h1>
       { logros ? logros.map((logro: {nombre: string, descripcion: string, fecha: Date}) => (
@@ -127,7 +127,7 @@ function Achievements() {
               />
             )}
           />
-          <Button type="submit" variant="filled" color="orange" loading={loading}>
+          <Button type="submit" variant="filled" color="var(--mantine-color-guinda-9)" loading={loading}>
             Agregar
           </Button>
         </form>

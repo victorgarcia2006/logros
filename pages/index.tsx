@@ -59,7 +59,7 @@ function Index() {
         padding="lg"
         className="w-full max-w-md flex flex-col gap-6 bg-white"
       >
-        <h1 className="text-[#FF6F04] text-2xl font-bold text-center">
+        <h1 className="text-[#840846] text-2xl font-bold text-center">
           ¡Bienvenido! <br /> Inicia sesión por favor
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
@@ -92,7 +92,7 @@ function Index() {
           <Button
             type="submit"
             variant="filled"
-            color="orange"
+            color="var(--mantine-color-guinda-9)"
             loading={loading}
           >
             Iniciar sesión
@@ -100,7 +100,7 @@ function Index() {
         </form>
         <p className="text-center">
           ¿No tienes una cuenta?{" "}
-          <Link href="register" className="text-orange-600">
+          <Link href="register" className="text-[#840846]">
             Regístrate
           </Link>
         </p>

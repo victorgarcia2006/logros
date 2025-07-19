@@ -58,7 +58,7 @@ function Register() {
         padding="lg"
         className="w-full max-w-md flex flex-col gap-6 bg-white"
       >
-        <h1 className="text-[#FF6F04] text-2xl font-bold text-center">
+        <h1 className="text-[#840846] text-2xl font-bold text-center">
           ¡Bienvenido! <br /> Crea una cuenta
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
@@ -99,13 +99,13 @@ function Register() {
               />
             )}
           />
-          <Button type="submit" variant="filled" color="orange" loading={loading}>
+          <Button type="submit" variant="filled" color="var(--mantine-color-guinda-9)" loading={loading}>
             <p>Crear cuenta</p>
           </Button>
         </form>
         <p className="text-center">
           ¿Ya tienes una cuenta?{" "}
-          <Link href="/" className="text-orange-600">
+          <Link href="/" className="text-[#840846]">
             Iniciar sesión
           </Link>
         </p>
